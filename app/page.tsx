@@ -194,7 +194,7 @@ export default function Home() {
                       {tool.tagline}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-[#6b5a48]">{tool.description}</p>
-                    <ul className="mt-4 flex flex-col gap-2 text-sm">
+                    <ul className="mb-6 mt-4 flex flex-col gap-2 text-sm">
                       {tool.points.map((p) => (
                         <li key={p} className="flex gap-2">
                           <span
@@ -208,7 +208,7 @@ export default function Home() {
                       ))}
                     </ul>
                     <span
-                      className="mt-6 inline-flex items-center justify-center gap-1 rounded-2xl py-3 font-black text-white transition group-hover:gap-3"
+                      className="mt-auto inline-flex items-center justify-center gap-1 rounded-2xl py-3 font-black text-white transition group-hover:gap-3"
                       style={{ background: tool.color }}
                     >
                       開始使用 <span aria-hidden>→</span>
