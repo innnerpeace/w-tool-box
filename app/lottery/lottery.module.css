@@ -1,0 +1,102 @@
+/* 放射光芒背景 */
+.rays {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 1400px;
+  height: 1400px;
+  margin-left: -700px;
+  margin-top: -700px;
+  background: repeating-conic-gradient(
+    from 0deg,
+    #fde7a3 0deg 9deg,
+    transparent 9deg 18deg
+  );
+  -webkit-mask-image: radial-gradient(circle, #000 0%, #000 22%, transparent 55%);
+  mask-image: radial-gradient(circle, #000 0%, #000 22%, transparent 55%);
+  animation: spin-slow 80s linear infinite;
+  pointer-events: none;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 420px;
+  height: 420px;
+  margin-left: -210px;
+  margin-top: -210px;
+  background: radial-gradient(circle, #fff6d8 0%, rgba(255, 246, 216, 0) 70%);
+  pointer-events: none;
+}
+
+/* 彩紙碎片 */
+.confetti {
+  position: absolute;
+  border-radius: 2px;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* 中獎視窗 */
+.backdrop {
+  animation: fade-in 0.2s ease-out both;
+}
+
+.pop {
+  animation: pop-in 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+
+/* 轉盤外圈燈泡閃爍 */
+.bulb {
+  animation: blink 1s steps(1) infinite;
+}
+
+.bulbFast {
+  animation-duration: 0.25s;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rays,
+  .confetti,
+  .bulb,
+  .pop,
+  .backdrop {
+    animation: none;
+  }
+}

@@ -1,0 +1,62 @@
+/* 主視覺放射光芒 */
+.rays {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 2000px;
+  height: 2000px;
+  margin-left: -1000px;
+  margin-top: -1000px;
+  background: repeating-conic-gradient(from 0deg, #fde7a3 0deg 7deg, transparent 7deg 14deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, #000 15%, transparent 45%);
+  mask-image: radial-gradient(circle, #000 0%, #000 15%, transparent 45%);
+  animation: spin-slow 120s linear infinite;
+  pointer-events: none;
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.floatSlow {
+  animation: float 7s ease-in-out infinite;
+}
+
+.spin {
+  animation: spin-slow 14s linear infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.confetti {
+  position: absolute;
+  border-radius: 2px;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rays,
+  .float,
+  .floatSlow,
+  .spin,
+  .confetti {
+    animation: none;
+  }
+}
