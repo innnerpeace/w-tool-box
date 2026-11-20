@@ -33,6 +33,11 @@ export default function SiteFooter() {
                 🎋 好運抽籤
               </Link>
             </li>
+            <li>
+              <Link href="/quiz" className="transition hover:text-[#f0b429]">
+                🔮 心理測驗
+              </Link>
+            </li>
           </ul>
         </div>
 

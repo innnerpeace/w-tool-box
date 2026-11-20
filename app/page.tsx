@@ -44,6 +44,17 @@ const TOOLS = [
     soft: "#fbf0cf",
     Art: FortuneArt,
   },
+  {
+    href: "/quiz",
+    emoji: "🔮",
+    name: "心理測驗",
+    tagline: "憑直覺作答，一分鐘認識自己",
+    description: "動物性格、壓力指數、戀愛類型、工作風格、社交電量，五種趣味測驗任你挑，測完馬上看結果與小建議。",
+    points: ["五種主題測驗，每個約 1 分鐘", "結果附性格組成或分數分析", "測完還能接著挑戰其他測驗"],
+    color: "#8b5cc4",
+    soft: "#ece3f7",
+    Art: QuizArt,
+  },
 ];
 
 const FEATURES = [
@@ -92,7 +103,7 @@ export default function Home() {
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-20 pt-14 sm:px-6 md:pt-20 lg:grid-cols-[1.05fr_1fr]">
             <div className="text-center lg:text-left">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-sm font-bold text-[#c4561b] shadow-sm ring-1 ring-[#f3dcb8]">
-                <span className="h-2 w-2 rounded-full bg-[#47b36b]" />3 個工具已上線
+                <span className="h-2 w-2 rounded-full bg-[#47b36b]" />4 個工具已上線
               </span>
               <h1 className="mt-6 text-[2.6rem] font-black leading-[1.15] tracking-tight sm:text-6xl">
                 日常小事，
@@ -111,7 +122,7 @@ export default function Home() {
                 。
               </h1>
               <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-[#5b4630] lg:mx-0">
-                W Tool Box 收集了抽獎、專注、占卜這些生活中用得到的小工具。打開網頁就能用，簡單、好看、又好玩。
+                W Tool Box 收集了抽獎、專注、占卜、心理測驗這些生活中用得到的小工具。打開網頁就能用，簡單、好看、又好玩。
               </p>
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
                 <a
@@ -158,9 +169,9 @@ export default function Home() {
         {/* ===== 工具介紹 ===== */}
         <section id="tools" className="scroll-mt-16 px-4 py-20 sm:px-6">
           <div className="mx-auto max-w-6xl">
-            <SectionTitle eyebrow="TOOLS" title="三個工具，三種好用" subtitle="點選卡片就能直接開始使用" />
+            <SectionTitle eyebrow="TOOLS" title="四個工具，四種好用" subtitle="點選卡片就能直接開始使用" />
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {TOOLS.map((tool) => (
                 <Link
                   key={tool.href}
@@ -233,7 +244,7 @@ export default function Home() {
             <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" aria-hidden />
             <div className="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-white/10" aria-hidden />
             <h2 className="relative text-3xl font-black sm:text-4xl">今天想先用哪一個？</h2>
-            <p className="relative mt-3 text-white/85">不管是抽獎、專注，還是看看運勢，一鍵就開始。</p>
+            <p className="relative mt-3 text-white/85">不管是抽獎、專注、看看運勢，還是測測自己，一鍵就開始。</p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
               {TOOLS.map((tool) => (
                 <Link
@@ -359,6 +370,28 @@ function FortuneArt() {
       <text x="60" y="79" textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="900" fill="#d7392b">
         籤
       </text>
+    </svg>
+  );
+}
+
+function QuizArt() {
+  return (
+    <svg viewBox="0 0 120 120" className="h-auto w-full">
+      <ellipse cx="60" cy="108" rx="34" ry="6" fill="#000" opacity="0.08" />
+      <path d="M 34 96 L 86 96 L 80 108 L 40 108 Z" fill="#6b3fa0" />
+      <rect x="30" y="90" width="60" height="8" rx="4" fill="#8b5cc4" />
+      <circle cx="60" cy="56" r="38" fill="#b89be0" />
+      <circle cx="60" cy="56" r="38" fill="url(#quizGlow)" />
+      <ellipse cx="46" cy="40" rx="10" ry="6" fill="#fff" opacity="0.6" transform="rotate(-30 46 40)" />
+      <path d="M 62 44 L 65 52 L 73 55 L 65 58 L 62 66 L 59 58 L 51 55 L 59 52 Z" fill="#fff" />
+      <circle cx="76" cy="70" r="2.5" fill="#fff" opacity="0.8" />
+      <circle cx="44" cy="68" r="1.8" fill="#fff" opacity="0.7" />
+      <defs>
+        <radialGradient id="quizGlow" cx="0.4" cy="0.35" r="0.7">
+          <stop offset="0" stopColor="#f3ecff" stopOpacity="0.9" />
+          <stop offset="1" stopColor="#8b5cc4" stopOpacity="0.2" />
+        </radialGradient>
+      </defs>
     </svg>
   );
 }

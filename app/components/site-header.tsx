@@ -5,6 +5,7 @@ const NAV = [
   { href: "/lottery", label: "抽獎轉盤" },
   { href: "/pomodoro", label: "番茄鐘" },
   { href: "/fortune", label: "好運抽籤" },
+  { href: "/quiz", label: "心理測驗" },
 ];
 
 export default function SiteHeader() {
